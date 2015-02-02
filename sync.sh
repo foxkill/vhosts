@@ -5,7 +5,7 @@ SRC_DIR=/etc/apache2/vhosts.d/.
 DST_DIR=.
 
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av $SRC_DIR $DST_DIR
+	rsync --delete --exclude ".git/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av $SRC_DIR $DST_DIR
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
